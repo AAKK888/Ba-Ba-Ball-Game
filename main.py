@@ -4,7 +4,9 @@ import time
 from ball import *
 from player import *
 import vari
+from os import path
 
+img_dir = path.join(path.dirname(__file__), 'img')
 score = 0
 # initialize pygame and create window
 pygame.init()
@@ -12,6 +14,7 @@ pygame.mixer.init()
 screen = pygame.display.set_mode((vari.WIDTH, vari.HEIGHT))
 pygame.display.set_caption("Ba-Ba-Ball Game (Help from KidsCanCode)")
 clock = pygame.time.Clock()
+
 
 font_name = pygame.font.match_font('arial')
 
@@ -38,7 +41,7 @@ def show_go_screen():
             if event.type == pygame.QUIT:
                 pygame.quit()
             if event.type == pygame.KEYUP:
-                time.sleep(1)
+                time.sleep(0.2)
                 waiting = False
 
 
@@ -53,6 +56,7 @@ while running:
         game_over = False
         all_sprites = pygame.sprite.Group()
         ballgroup = pygame.sprite.Group()
+        umpha = BallSpeed(15, 15)
         ball = Ball(9, 9)
         ball2 = Ball(2, 2)
         ball3 = Ball(2, 1)
@@ -80,7 +84,9 @@ while running:
         all_sprites.add(ball12)
 
         all_sprites.add(playerthing)
+        all_sprites.add(umpha)
 
+        ballgroup.add(umpha)
         ballgroup.add(ball)
         ballgroup.add(ball2)
         ballgroup.add(ball3)
@@ -94,7 +100,6 @@ while running:
         ballgroup.add(ball11)
         ballgroup.add(ball12)
 
-        score = float(score)
         score = 0
     # keep loop running at the desired speed
     clock.tick(vari.FPS)
