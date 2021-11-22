@@ -1,16 +1,17 @@
-import pygame 
+import pygame
 import random
 import vari
 pygame.init()
 
+
 class Ball(pygame.sprite.Sprite):
   def __init__(self, x_speed, y_speed):
     pygame.sprite.Sprite.__init__(self)
-    self.image = pygame.Surface((20,20))
+    self.image = pygame.Surface((25, 25))
     self.image.fill(vari.RED)
     self.image.set_colorkey(vari.BLACK)
     self.rect = self.image.get_rect()
-    self.rect.center = (random.randint(5, 200), random.randint(5, 200))
+    self.rect.center = (random.randint(5, 400), random.randint(5, 400))
     self.x_speed = x_speed
     self.y_speed = y_speed
     self.number = 0
