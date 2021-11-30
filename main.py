@@ -117,6 +117,7 @@ while running:
     pygame.display.update()
     collide2 = pygame.sprite.spritecollide(playerthing, ballgroup, True)
     if collide2:
+        time.sleep(1)
         game_over = True
 
     # 3. Draw / render
