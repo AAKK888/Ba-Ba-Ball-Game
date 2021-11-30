@@ -52,3 +52,5 @@ class BallSpeed(pygame.sprite.Sprite):
       self.x_speed = -self.x_speed
     if self.rect.left < 0:
       self.x_speed = -self.x_speed
+
+      
