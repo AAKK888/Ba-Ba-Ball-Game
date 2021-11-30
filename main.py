@@ -5,7 +5,7 @@ from ball import *
 from player import *
 import vari
 from os import path
-
+from Obsticles import *
 img_dir = path.join(path.dirname(__file__), 'img')
 score = 0
 # initialize pygame and create window
@@ -56,11 +56,10 @@ while running:
         game_over = False
         all_sprites = pygame.sprite.Group()
         ballgroup = pygame.sprite.Group()
+        umphagroup = pygame.sprite.Group()
         umpha = BallSpeed(15, 15)
         ball = Ball(9, 9)
         ball2 = Ball(2, 2)
-        ball3 = Ball(2, 1)
-        ball4 = Ball(1, 2)
         ball5 = Ball(1, 3)
         ball6 = Ball(3, 1)
         ball7 = Ball(3, 1)
@@ -69,11 +68,11 @@ while running:
         ball10 = Ball(4, 1)
         ball11 = Ball(4, 4)
         ball12 = Ball(6, 6)
+        annoyingthing = Obsticle()
+        annoyingthing2 = Obsticle()
         playerthing = Player()
         all_sprites.add(ball)
         all_sprites.add(ball2)
-        all_sprites.add(ball3)
-        all_sprites.add(ball4)
         all_sprites.add(ball5)
         all_sprites.add(ball6)
         all_sprites.add(ball7)
@@ -85,12 +84,12 @@ while running:
 
         all_sprites.add(playerthing)
         all_sprites.add(umpha)
-
+        umphagroup.add(umpha)
+        all_sprites.add(annoyingthing2)
+        all_sprites.add(annoyingthing)
         ballgroup.add(umpha)
         ballgroup.add(ball)
         ballgroup.add(ball2)
-        ballgroup.add(ball3)
-        ballgroup.add(ball4)
         ballgroup.add(ball5)
         ballgroup.add(ball6)
         ballgroup.add(ball7)
@@ -104,8 +103,8 @@ while running:
     # keep loop running at the desired speed
     clock.tick(vari.FPS)
 
-    score = float(score)
-    score += 0.5
+    score = int(score)
+    score += 1
     score = str(score)
 
     # 1. process input (events)
@@ -113,12 +112,11 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
-
     # 2. Update
     all_sprites.update()
     pygame.display.update()
-    collide = pygame.sprite.spritecollide(playerthing, ballgroup, True)
-    if collide:
+    collide2 = pygame.sprite.spritecollide(playerthing, ballgroup, True)
+    if collide2:
         game_over = True
 
     # 3. Draw / render
