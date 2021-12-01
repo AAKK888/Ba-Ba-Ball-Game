@@ -60,6 +60,8 @@ while running:
         umpha = BallSpeed(15, 15)
         ball = Ball(9, 9)
         ball2 = Ball(2, 2)
+        ball3 = Ball(1, 2)
+        ball4 = Ball(2, 1)
         ball5 = Ball(1, 3)
         ball6 = Ball(3, 1)
         ball7 = Ball(3, 1)
@@ -73,6 +75,8 @@ while running:
         playerthing = Player()
         all_sprites.add(ball)
         all_sprites.add(ball2)
+        all_sprites.add(ball3)
+        all_sprites.add(ball4)
         all_sprites.add(ball5)
         all_sprites.add(ball6)
         all_sprites.add(ball7)
@@ -90,6 +94,8 @@ while running:
         ballgroup.add(umpha)
         ballgroup.add(ball)
         ballgroup.add(ball2)
+        ballgroup.add(ball3)
+        ballgroup.add(ball4)
         ballgroup.add(ball5)
         ballgroup.add(ball6)
         ballgroup.add(ball7)
@@ -100,6 +106,7 @@ while running:
         ballgroup.add(ball12)
 
         score = 0
+        death_count = 0
     # keep loop running at the desired speed
     clock.tick(vari.FPS)
 
