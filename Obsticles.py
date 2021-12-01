@@ -7,15 +7,15 @@ import random
 class Obsticle(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((50, 50))
+        self.image = pygame.Surface((150, 150))
         self.image.fill(vari.GREEN)
         self.image.set_colorkey(vari.BLACK)
         self.rect = self.image.get_rect()
         self.rect.center = (random.randrange(0, vari.WIDTH), random.randrange(0, vari.HEIGHT))
 
     def update(self):
-        xnum = random.randrange(5, 50)
-        ynum = random.randrange(5, 50)
+        xnum = random.randrange(40, 60)
+        ynum = random.randrange(40, 60)
         self.rect.x += xnum
         self.rect.y += ynum
         self.rect.x -= ynum
