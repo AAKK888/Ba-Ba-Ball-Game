@@ -13,3 +13,4 @@ HEIGHT = 800
 FPS = 60
 
 SCORE_FILE = 'highscore.txt'
+
