@@ -15,3 +15,4 @@ FPS = 60
 SCORE_FILE = 'highscore.txt'
 
 
+
