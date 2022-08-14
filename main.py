@@ -1,5 +1,4 @@
 import random
-
 import pygame
 import time
 from ball import *
