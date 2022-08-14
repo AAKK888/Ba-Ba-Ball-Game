@@ -1,11 +1,15 @@
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
+CAMORED = (230, 117, 30)
 GREEN = (0,255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (245, 117, 0)
+YELLOW = (255, 255, 0)
 
 DARKRED = (175, 0, 0)
 WIDTH = 1520
-HEIGHT = 805
+HEIGHT = 800
 FPS = 60
+
+SCORE_FILE = 'highscore.txt'
